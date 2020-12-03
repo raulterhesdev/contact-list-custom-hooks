@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import DataInsert from './components/DataInsert/DataInsert';
+import DataDisplay from './components/DataDisplay/DataDisplay';
+import { useTheme } from './hooks/useTheme';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { generalTheme } from './constants/theme';
+import { Wrapper } from './App.styles';
+
+const App = () => {
+	useTheme(generalTheme);
+
+	return (
+		<Wrapper className='App'>
+			<Header />
+			<DataInsert />
+			<DataDisplay />
+		</Wrapper>
+	);
+};
 
 export default App;
